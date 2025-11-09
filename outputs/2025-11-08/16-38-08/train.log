@@ -1,0 +1,102 @@
+[2025-11-08 16:38:08,255][accelerate.utils.other][WARNING] - Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[2025-11-08 16:38:08,257][__main__][INFO] - models:
+  pretrained_model_name_or_path: /data1/dif/sd1-5
+  revision: null
+  variant: null
+  resolution: 512
+  image_interpolation_mode: lanczos
+datasets:
+  dataset_name: /data1/dif/non-finetune-lora/test_case/one_image
+  dataset_config_name: null
+  train_data_dir: null
+  image_column: image
+  caption_column: text
+  center_crop: true
+  random_flip: true
+  max_train_samples: null
+  validation_prompt: an anime girl posing for a picture
+  instance_prompt: an anime image of xxy5syt00 girl
+  class_prompt: an anime image of girl
+losses:
+  is_normal: false
+  beta: 0.1
+  nft_gradient_accumulation_steps: 1
+  nft_batch_size: 16
+  num_nft_epochs: 100
+  nft_learning_rate: 0.0001
+  nft_scheduler: constant
+  second_order: false
+  allow_unused: false
+  alg: reptile
+  optim: adamw
+seed: 42
+noise_offset: 0.0
+prediction_type: null
+snr_gamma: null
+gradient_accumulation_steps: 1
+train_batch_size: 16
+dataloader_num_workers: 0
+max_train_steps: 1
+num_train_epochs: 100
+max_grad_norm: 1.0
+mixed_precision: bf16
+resume_from_checkpoint: null
+checkpointing_steps: 50
+validation_epochs: 1
+num_validation_images: 4
+checkpoints_total_limit: null
+gradient_checkpointing: true
+learning_rate: 0.0001
+use_8bit_adam: false
+adam_beta1: 0.9
+adam_beta2: 0.99
+adam_weight_decay: 0.01
+adam_epsilon: 1.0e-08
+lr_scheduler: constant
+lr_warmup_steps: 500
+rank: 4
+lora_alpha: 4
+lora_dropout: 0.0
+init_lora_weights: gaussian
+unet_target_modules:
+- to_k
+- to_q
+- to_v
+- to_out.0
+- add_k_proj
+- add_v_proj
+prior_loss_weight: 1.0
+num_class_images: 128
+sample_batch_size: 4
+with_prior_preservation: false
+prior_generation_precision: bf16
+pre_compute_text_embeddings: false
+text_encoder_use_attention_mask: false
+train_text_encoder: true
+text_encoder_target_modules:
+- q_proj
+- k_proj
+- v_proj
+- out_proj
+tokenizer_max_length: null
+output_dir: /data1/dif/nft_db_output/experiment_20251108_163757
+logging_dir: ./logging
+report_to: tensorboard
+
+[2025-11-08 16:38:08,257][__main__][INFO] - Distributed environment: DistributedType.NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cpu
+
+Mixed precision type: bf16
+
+[2025-11-08 16:38:08,260][__main__][INFO] - Training on experiment: 0
+[2025-11-08 16:38:09,295][__main__][INFO] - ***** Running training *****
+[2025-11-08 16:38:09,296][__main__][INFO] -   Num examples = 1
+[2025-11-08 16:38:09,296][__main__][INFO] -   Num batches each epoch = 1
+[2025-11-08 16:38:09,296][__main__][INFO] -   Num Epochs = 1
+[2025-11-08 16:38:09,296][__main__][INFO] -   Instantaneous batch size per device = 16
+[2025-11-08 16:38:09,296][__main__][INFO] -   Total train batch size (w. parallel, distributed & accumulation) = 16
+[2025-11-08 16:38:09,296][__main__][INFO] -   Gradient Accumulation steps = 1
+[2025-11-08 16:38:09,296][__main__][INFO] -   Total optimization steps = 1

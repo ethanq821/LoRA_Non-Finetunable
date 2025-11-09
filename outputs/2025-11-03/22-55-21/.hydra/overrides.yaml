@@ -1,0 +1,7 @@
+- output_dir=/data1/dif/nft_db_output/experiment_20251103_225511
+- class_data_dir=/data1/dif/nft_db_output/experiment_20251103_225511/class_data_dir
+- instance_data_dir=/data1/dif/non-finetune-lora/test_case/target/0
+- losses=normal
+- with_prior_preservation=true
+- train_text_encoder=true
+- datasets.validation_prompt=an anime image of xxy5syt00 girl

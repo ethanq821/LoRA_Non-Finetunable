@@ -1,0 +1,5 @@
+pretrained_model_name_or_path: /data1/dif/sd1-5
+revision:
+variant:
+resolution: 512
+image_interpolation_mode: lanczos

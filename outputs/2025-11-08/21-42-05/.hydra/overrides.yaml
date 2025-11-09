@@ -1,0 +1,5 @@
+- output_dir=/data1/dif/nft_db_output/experiment_20251108_214155
+- datasets.dataset_name=/data1/dif/non-finetune-lora/test_case/target
+- losses=nft
+- with_prior_preservation=true
+- train_text_encoder=true

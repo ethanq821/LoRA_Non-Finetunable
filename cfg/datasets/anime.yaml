@@ -1,0 +1,15 @@
+dataset_name: /data1/dif/non-finetune-lora/test_case/dataset # commonly unused
+dataset_config_name:
+train_data_dir:
+image_column: image
+caption_column: text
+center_crop: True
+random_flip: True
+max_train_samples:
+validation_prompt: an anime girl posing for a picture # when using dreambooth, this will be ignored
+
+# dreambooth
+# instance_data_dir: "YOUR_PATH_TO_INSTANCE_DATA"
+instance_prompt: "an anime image of xxy5syt00 girl"
+# class_data_dir: "YOUR_PATH_TO_CLASS_DATA"
+class_prompt: "an anime image of girl"

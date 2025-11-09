@@ -1,0 +1,14 @@
+is_normal: False
+beta: 0.1
+
+
+nft_gradient_accumulation_steps: 1
+nft_batch_size: 16
+num_nft_epochs: 5
+nft_learning_rate: 1e-4
+nft_scheduler: "constant"
+
+second_order: False
+allow_unused: False
+alg: reptile
+optim: adamw

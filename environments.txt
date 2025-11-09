@@ -1,0 +1,12 @@
+tensorboard
+numpy=2.0.2
+torch=2.5.1
+torchvision
+tqdm
+datasets
+transformers=4.47.0
+diffusers=0.32.1
+accelerate
+hydra-core
+omegaconf
+peft

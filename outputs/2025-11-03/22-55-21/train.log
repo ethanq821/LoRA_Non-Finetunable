@@ -1,0 +1,402 @@
+[2025-11-03 22:55:21,466][accelerate.utils.other][WARNING] - Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[2025-11-03 22:55:21,469][__main__][INFO] - models:
+  pretrained_model_name_or_path: /data1/dif/sd1-5
+  revision: null
+  variant: null
+  resolution: 512
+  image_interpolation_mode: lanczos
+datasets:
+  dataset_name: /data1/dif/non-finetune-lora/test_case/dataset
+  dataset_config_name: null
+  cache_dir: /data1/dif/non-finetune-lora/test_case/dataset
+  train_data_dir: null
+  image_column: image
+  caption_column: text
+  center_crop: true
+  random_flip: true
+  max_train_samples: null
+  validation_prompt: an anime image of xxy5syt00 girl
+losses:
+  is_normal: true
+seed: 42
+noise_offset: 0.0
+prediction_type: null
+snr_gamma: null
+gradient_accumulation_steps: 1
+train_batch_size: 16
+dataloader_num_workers: 0
+max_train_steps: null
+num_train_epochs: 100
+max_grad_norm: 1.0
+mixed_precision: bf16
+resume_from_checkpoint: null
+checkpointing_steps: 50
+validation_epochs: 1
+num_validation_images: 4
+checkpoints_total_limit: null
+gradient_checkpointing: true
+learning_rate: 0.0001
+use_8bit_adam: false
+adam_beta1: 0.9
+adam_beta2: 0.99
+adam_weight_decay: 0.01
+adam_epsilon: 1.0e-08
+lr_scheduler: constant
+lr_warmup_steps: 500
+rank: 4
+lora_alpha: 4
+lora_dropout: 0.0
+init_lora_weights: gaussian
+unet_target_modules:
+- to_k
+- to_q
+- to_v
+- to_out.0
+- add_k_proj
+- add_v_proj
+instance_data_dir: /data1/dif/non-finetune-lora/test_case/target/0
+instance_prompt: an anime image of xxy5syt00 girl
+class_data_dir: /data1/dif/nft_db_output/experiment_20251103_225511/class_data_dir
+class_prompt: an anime image of girl
+prior_loss_weight: 1.0
+num_class_images: 128
+sample_batch_size: 4
+with_prior_preservation: true
+prior_generation_precision: bf16
+pre_compute_text_embeddings: false
+text_encoder_use_attention_mask: false
+train_text_encoder: true
+text_encoder_target_modules:
+- q_proj
+- k_proj
+- v_proj
+- out_proj
+tokenizer_max_length: null
+output_dir: /data1/dif/nft_db_output/experiment_20251103_225511
+logging_dir: ./logging
+report_to: tensorboard
+
+[2025-11-03 22:55:21,469][__main__][INFO] - Distributed environment: DistributedType.MULTI_GPU  Backend: nccl
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda:0
+
+Mixed precision type: bf16
+
+[2025-11-03 22:55:24,072][__main__][INFO] - Number of class images to sample: 128.
+[2025-11-03 22:57:51,009][__main__][INFO] - ***** Running training *****
+[2025-11-03 22:57:51,009][__main__][INFO] -   Num examples = 128
+[2025-11-03 22:57:51,009][__main__][INFO] -   Num batches each epoch = 8
+[2025-11-03 22:57:51,009][__main__][INFO] -   Num Epochs = 100
+[2025-11-03 22:57:51,009][__main__][INFO] -   Instantaneous batch size per device = 16
+[2025-11-03 22:57:51,010][__main__][INFO] -   Total train batch size (w. parallel, distributed & accumulation) = 16
+[2025-11-03 22:57:51,010][__main__][INFO] -   Gradient Accumulation steps = 1
+[2025-11-03 22:57:51,010][__main__][INFO] -   Total optimization steps = 800
+[2025-11-03 22:57:53,438][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -I/home/dev/software/ncurses/include -fPIC -fPIC -c /tmp/tmpjxeuln_k/test.c -o /tmp/tmpjxeuln_k/test.o
+[2025-11-03 22:57:53,472][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -L/home/dev/software/ncurses/lib /tmp/tmpjxeuln_k/test.o -laio -o /tmp/tmpjxeuln_k/a.out
+[2025-11-03 22:57:53,815][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -I/home/dev/software/ncurses/include -fPIC -fPIC -c /tmp/tmpxy0031zx/test.c -o /tmp/tmpxy0031zx/test.o
+[2025-11-03 22:57:53,853][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -L/home/dev/software/ncurses/lib /tmp/tmpxy0031zx/test.o -L/usr/local/cuda-12 -L/usr/local/cuda-12/lib64 -lcufile -o /tmp/tmpxy0031zx/a.out
+[2025-11-03 22:58:13,071][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 22:58:40,893][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 22:59:08,651][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 22:59:36,390][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:00:04,086][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:00:31,947][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:00:45,244][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50
+[2025-11-03 23:00:45,368][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50/optimizer.bin
+[2025-11-03 23:00:45,369][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50/scheduler.bin
+[2025-11-03 23:00:45,369][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50/sampler.bin
+[2025-11-03 23:00:45,369][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50/sampler_1.bin
+[2025-11-03 23:00:45,369][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50/random_states_0.pkl
+[2025-11-03 23:00:45,370][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-50
+[2025-11-03 23:01:00,354][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:01:27,168][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:01:54,652][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:02:22,991][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:02:50,794][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:03:18,666][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:03:36,907][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100
+[2025-11-03 23:03:37,014][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100/optimizer.bin
+[2025-11-03 23:03:37,014][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100/scheduler.bin
+[2025-11-03 23:03:37,014][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100/sampler.bin
+[2025-11-03 23:03:37,014][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100/sampler_1.bin
+[2025-11-03 23:03:37,015][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100/random_states_0.pkl
+[2025-11-03 23:03:37,015][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-100
+[2025-11-03 23:03:46,561][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:04:14,523][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:04:42,247][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:05:09,834][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:05:37,786][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:06:05,452][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:06:30,033][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150
+[2025-11-03 23:06:30,116][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150/optimizer.bin
+[2025-11-03 23:06:30,117][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150/scheduler.bin
+[2025-11-03 23:06:30,117][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150/sampler.bin
+[2025-11-03 23:06:30,117][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150/sampler_1.bin
+[2025-11-03 23:06:30,118][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150/random_states_0.pkl
+[2025-11-03 23:06:30,118][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-150
+[2025-11-03 23:06:34,540][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:07:02,500][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:07:30,977][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:07:58,176][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:08:25,537][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:08:53,412][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:09:20,836][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200
+[2025-11-03 23:09:20,955][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200/optimizer.bin
+[2025-11-03 23:09:20,956][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200/scheduler.bin
+[2025-11-03 23:09:20,956][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200/sampler.bin
+[2025-11-03 23:09:20,956][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200/sampler_1.bin
+[2025-11-03 23:09:20,956][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200/random_states_0.pkl
+[2025-11-03 23:09:20,956][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-200
+[2025-11-03 23:09:21,170][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:09:48,853][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:10:16,601][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:10:46,272][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:11:14,225][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:11:41,933][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:12:09,803][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:12:23,016][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250
+[2025-11-03 23:12:23,162][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250/optimizer.bin
+[2025-11-03 23:12:23,163][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250/scheduler.bin
+[2025-11-03 23:12:23,163][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250/sampler.bin
+[2025-11-03 23:12:23,163][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250/sampler_1.bin
+[2025-11-03 23:12:23,164][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250/random_states_0.pkl
+[2025-11-03 23:12:23,164][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-250
+[2025-11-03 23:12:38,152][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:13:06,041][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:13:34,127][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:14:01,522][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:14:27,706][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:14:55,409][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:15:13,690][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300
+[2025-11-03 23:15:13,795][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300/optimizer.bin
+[2025-11-03 23:15:13,796][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300/scheduler.bin
+[2025-11-03 23:15:13,796][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300/sampler.bin
+[2025-11-03 23:15:13,796][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300/sampler_1.bin
+[2025-11-03 23:15:13,796][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300/random_states_0.pkl
+[2025-11-03 23:15:13,797][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-300
+[2025-11-03 23:15:23,358][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:15:51,160][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:16:18,750][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:16:46,541][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:17:14,453][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:17:42,179][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:18:08,163][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350
+[2025-11-03 23:18:08,272][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350/optimizer.bin
+[2025-11-03 23:18:08,272][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350/scheduler.bin
+[2025-11-03 23:18:08,272][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350/sampler.bin
+[2025-11-03 23:18:08,272][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350/sampler_1.bin
+[2025-11-03 23:18:08,273][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350/random_states_0.pkl
+[2025-11-03 23:18:08,273][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-350
+[2025-11-03 23:18:12,680][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:18:40,974][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:19:08,595][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:19:40,327][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:20:07,368][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:20:34,826][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:21:03,665][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400
+[2025-11-03 23:21:03,758][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400/optimizer.bin
+[2025-11-03 23:21:03,758][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400/scheduler.bin
+[2025-11-03 23:21:03,758][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400/sampler.bin
+[2025-11-03 23:21:03,758][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400/sampler_1.bin
+[2025-11-03 23:21:03,759][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400/random_states_0.pkl
+[2025-11-03 23:21:03,759][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-400
+[2025-11-03 23:21:03,971][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:21:31,695][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:21:59,399][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:22:26,996][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:22:54,589][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:23:22,260][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:23:49,806][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:24:02,906][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450
+[2025-11-03 23:24:02,990][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450/optimizer.bin
+[2025-11-03 23:24:02,990][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450/scheduler.bin
+[2025-11-03 23:24:02,990][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450/sampler.bin
+[2025-11-03 23:24:02,991][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450/sampler_1.bin
+[2025-11-03 23:24:02,991][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450/random_states_0.pkl
+[2025-11-03 23:24:02,991][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-450
+[2025-11-03 23:24:17,505][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:24:45,467][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:25:13,243][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:25:41,139][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:26:09,390][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:26:35,712][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:26:53,794][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500
+[2025-11-03 23:26:53,938][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500/optimizer.bin
+[2025-11-03 23:26:53,938][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500/scheduler.bin
+[2025-11-03 23:26:53,939][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500/sampler.bin
+[2025-11-03 23:26:53,939][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500/sampler_1.bin
+[2025-11-03 23:26:53,940][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500/random_states_0.pkl
+[2025-11-03 23:26:53,940][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-500
+[2025-11-03 23:27:03,395][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:27:31,138][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:27:58,866][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:28:26,645][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:28:54,482][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:29:22,205][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:29:45,413][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550
+[2025-11-03 23:29:45,516][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550/optimizer.bin
+[2025-11-03 23:29:45,516][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550/scheduler.bin
+[2025-11-03 23:29:45,516][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550/sampler.bin
+[2025-11-03 23:29:45,516][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550/sampler_1.bin
+[2025-11-03 23:29:45,517][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550/random_states_0.pkl
+[2025-11-03 23:29:45,517][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-550
+[2025-11-03 23:29:49,788][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:30:17,787][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:30:45,773][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:31:15,344][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:31:43,271][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:32:12,158][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:32:38,885][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600
+[2025-11-03 23:32:38,967][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600/optimizer.bin
+[2025-11-03 23:32:38,967][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600/scheduler.bin
+[2025-11-03 23:32:38,967][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600/sampler.bin
+[2025-11-03 23:32:38,967][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600/sampler_1.bin
+[2025-11-03 23:32:38,968][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600/random_states_0.pkl
+[2025-11-03 23:32:38,968][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-600
+[2025-11-03 23:32:39,183][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:33:06,069][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:33:33,620][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:34:01,418][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:34:29,107][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:34:56,809][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:35:24,214][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:35:37,214][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650
+[2025-11-03 23:35:37,317][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650/optimizer.bin
+[2025-11-03 23:35:37,317][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650/scheduler.bin
+[2025-11-03 23:35:37,318][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650/sampler.bin
+[2025-11-03 23:35:37,318][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650/sampler_1.bin
+[2025-11-03 23:35:37,318][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650/random_states_0.pkl
+[2025-11-03 23:35:37,318][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-650
+[2025-11-03 23:35:51,831][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:36:19,437][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:36:47,083][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:37:14,759][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:37:42,287][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:38:09,719][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:38:28,167][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700
+[2025-11-03 23:38:28,297][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700/optimizer.bin
+[2025-11-03 23:38:28,297][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700/scheduler.bin
+[2025-11-03 23:38:28,297][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700/sampler.bin
+[2025-11-03 23:38:28,297][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700/sampler_1.bin
+[2025-11-03 23:38:28,298][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700/random_states_0.pkl
+[2025-11-03 23:38:28,298][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-700
+[2025-11-03 23:38:38,052][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:39:03,898][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:39:31,560][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:39:59,145][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:40:26,481][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:40:54,422][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:41:17,678][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750
+[2025-11-03 23:41:17,766][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750/optimizer.bin
+[2025-11-03 23:41:17,766][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750/scheduler.bin
+[2025-11-03 23:41:17,766][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750/sampler.bin
+[2025-11-03 23:41:17,766][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750/sampler_1.bin
+[2025-11-03 23:41:17,767][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750/random_states_0.pkl
+[2025-11-03 23:41:17,767][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251103_225511/checkpoint-750
+[2025-11-03 23:41:22,108][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:41:49,844][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:42:17,414][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:42:45,173][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:43:12,964][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.
+[2025-11-03 23:43:40,685][__main__][INFO] - Running validation... 
+ Generating 4 images with prompt: an anime image of xxy5syt00 girl.

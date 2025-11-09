@@ -1,0 +1,9 @@
+- output_dir=/data1/dif/nft_db_output/experiment_20251108_191233
+- datasets.dataset_name=/data1/dif/non-finetune-lora/test_case/one_image
+- losses=nft
+- with_prior_preservation=false
+- train_text_encoder=true
+- max_train_steps=5
+- num_validation_images=1
+- losses.num_nft_epochs=3
+- eval=false

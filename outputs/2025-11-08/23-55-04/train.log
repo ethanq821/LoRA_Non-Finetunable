@@ -1,0 +1,236 @@
+[2025-11-08 23:55:05,385][accelerate.utils.other][WARNING] - Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[2025-11-08 23:55:05,391][__main__][INFO] - models:
+  pretrained_model_name_or_path: /data1/dif/sd1-5
+  revision: null
+  variant: null
+  resolution: 512
+  image_interpolation_mode: lanczos
+datasets:
+  dataset_name: /data1/dif/non-finetune-lora/test_case/target
+  dataset_config_name: null
+  train_data_dir: null
+  image_column: image
+  caption_column: text
+  center_crop: true
+  random_flip: true
+  max_train_samples: null
+  validation_prompt: an anime girl posing for a picture
+  instance_prompt: an anime image of xxy5syt00 girl
+  class_prompt: an anime image of girl
+losses:
+  is_normal: false
+  beta: 0.1
+  nft_gradient_accumulation_steps: 1
+  nft_batch_size: 16
+  num_nft_epochs: 5
+  nft_learning_rate: 0.0001
+  nft_scheduler: constant
+  second_order: false
+  allow_unused: false
+  alg: reptile
+  optim: adamw
+seed: 42
+noise_offset: 0.0
+prediction_type: null
+snr_gamma: null
+eval: true
+gradient_accumulation_steps: 1
+train_batch_size: 16
+dataloader_num_workers: 0
+max_train_steps: null
+num_train_epochs: 100
+max_grad_norm: 1.0
+mixed_precision: bf16
+resume_from_checkpoint: null
+checkpointing_steps: 50
+validation_epochs: 1
+num_validation_images: 4
+checkpoints_total_limit: null
+gradient_checkpointing: false
+learning_rate: 0.0001
+use_8bit_adam: false
+adam_beta1: 0.9
+adam_beta2: 0.99
+adam_weight_decay: 0.01
+adam_epsilon: 1.0e-08
+lr_scheduler: constant
+lr_warmup_steps: 500
+rank: 4
+lora_alpha: 4
+lora_dropout: 0.0
+init_lora_weights: gaussian
+unet_target_modules:
+- to_k
+- to_q
+- to_v
+- to_out.0
+- add_k_proj
+- add_v_proj
+prior_loss_weight: 1.0
+num_class_images: 128
+sample_batch_size: 4
+with_prior_preservation: true
+prior_generation_precision: bf16
+pre_compute_text_embeddings: false
+text_encoder_use_attention_mask: false
+train_text_encoder: true
+text_encoder_target_modules:
+- q_proj
+- k_proj
+- v_proj
+- out_proj
+tokenizer_max_length: null
+output_dir: /data1/dif/nft_db_output/experiment_20251108_235453
+logging_dir: ./logging
+report_to: tensorboard
+
+[2025-11-08 23:55:05,391][__main__][INFO] - Distributed environment: DistributedType.MULTI_GPU  Backend: nccl
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda:0
+
+Mixed precision type: bf16
+
+[2025-11-08 23:55:05,396][__main__][INFO] - Training on experiment: 0
+[2025-11-08 23:55:09,313][__main__][INFO] - Number of class images to sample: 128.
+[2025-11-08 23:56:21,298][__main__][INFO] - ***** Running training *****
+[2025-11-08 23:56:21,299][__main__][INFO] -   Num examples = 123
+[2025-11-08 23:56:21,299][__main__][INFO] -   Num batches each epoch = 8
+[2025-11-08 23:56:21,299][__main__][INFO] -   Num Epochs = 100
+[2025-11-08 23:56:21,299][__main__][INFO] -   Instantaneous batch size per device = 16
+[2025-11-08 23:56:21,299][__main__][INFO] -   Total train batch size (w. parallel, distributed & accumulation) = 16
+[2025-11-08 23:56:21,299][__main__][INFO] -   Gradient Accumulation steps = 1
+[2025-11-08 23:56:21,299][__main__][INFO] -   Total optimization steps = 800
+[2025-11-08 23:57:19,986][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -I/home/dev/software/ncurses/include -fPIC -fPIC -c /tmp/tmp8jmay05a/test.c -o /tmp/tmp8jmay05a/test.o
+[2025-11-08 23:57:20,007][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -L/home/dev/software/ncurses/lib /tmp/tmp8jmay05a/test.o -laio -o /tmp/tmp8jmay05a/a.out
+[2025-11-08 23:57:20,478][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -O2 -isystem /home/dev/zbq/.conda/include -fPIC -I/home/dev/software/ncurses/include -fPIC -fPIC -c /tmp/tmpjja4vibj/test.c -o /tmp/tmpjja4vibj/test.o
+[2025-11-08 23:57:20,502][root][INFO] - gcc -pthread -B /home/dev/zbq/.conda/compiler_compat -L/home/dev/software/ncurses/lib /tmp/tmpjja4vibj/test.o -L/usr/local/cuda-12 -L/usr/local/cuda-12/lib64 -lcufile -o /tmp/tmpjja4vibj/a.out
+[2025-11-09 00:02:48,729][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50
+[2025-11-09 00:02:48,806][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50/optimizer.bin
+[2025-11-09 00:02:48,807][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50/scheduler.bin
+[2025-11-09 00:02:48,807][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50/sampler.bin
+[2025-11-09 00:02:48,807][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50/sampler_1.bin
+[2025-11-09 00:02:48,807][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50/sampler_2.bin
+[2025-11-09 00:02:48,807][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50/random_states_0.pkl
+[2025-11-09 00:02:48,808][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-50
+[2025-11-09 00:08:49,043][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100
+[2025-11-09 00:08:49,146][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100/optimizer.bin
+[2025-11-09 00:08:49,147][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100/scheduler.bin
+[2025-11-09 00:08:49,147][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100/sampler.bin
+[2025-11-09 00:08:49,147][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100/sampler_1.bin
+[2025-11-09 00:08:49,147][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100/sampler_2.bin
+[2025-11-09 00:08:49,148][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100/random_states_0.pkl
+[2025-11-09 00:08:49,148][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-100
+[2025-11-09 00:14:57,558][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150
+[2025-11-09 00:14:57,643][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150/optimizer.bin
+[2025-11-09 00:14:57,643][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150/scheduler.bin
+[2025-11-09 00:14:57,644][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150/sampler.bin
+[2025-11-09 00:14:57,644][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150/sampler_1.bin
+[2025-11-09 00:14:57,644][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150/sampler_2.bin
+[2025-11-09 00:14:57,644][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150/random_states_0.pkl
+[2025-11-09 00:14:57,644][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-150
+[2025-11-09 00:20:49,325][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200
+[2025-11-09 00:20:49,402][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200/optimizer.bin
+[2025-11-09 00:20:49,403][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200/scheduler.bin
+[2025-11-09 00:20:49,403][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200/sampler.bin
+[2025-11-09 00:20:49,403][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200/sampler_1.bin
+[2025-11-09 00:20:49,403][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200/sampler_2.bin
+[2025-11-09 00:20:49,404][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200/random_states_0.pkl
+[2025-11-09 00:20:49,404][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-200
+[2025-11-09 00:26:59,423][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250
+[2025-11-09 00:26:59,500][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250/optimizer.bin
+[2025-11-09 00:26:59,500][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250/scheduler.bin
+[2025-11-09 00:26:59,500][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250/sampler.bin
+[2025-11-09 00:26:59,501][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250/sampler_1.bin
+[2025-11-09 00:26:59,501][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250/sampler_2.bin
+[2025-11-09 00:26:59,501][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250/random_states_0.pkl
+[2025-11-09 00:26:59,501][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-250
+[2025-11-09 00:33:14,121][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300
+[2025-11-09 00:33:14,199][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300/optimizer.bin
+[2025-11-09 00:33:14,199][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300/scheduler.bin
+[2025-11-09 00:33:14,199][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300/sampler.bin
+[2025-11-09 00:33:14,199][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300/sampler_1.bin
+[2025-11-09 00:33:14,199][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300/sampler_2.bin
+[2025-11-09 00:33:14,200][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300/random_states_0.pkl
+[2025-11-09 00:33:14,200][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-300
+[2025-11-09 00:39:37,001][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350
+[2025-11-09 00:39:37,079][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350/optimizer.bin
+[2025-11-09 00:39:37,080][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350/scheduler.bin
+[2025-11-09 00:39:37,080][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350/sampler.bin
+[2025-11-09 00:39:37,080][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350/sampler_1.bin
+[2025-11-09 00:39:37,080][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350/sampler_2.bin
+[2025-11-09 00:39:37,080][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350/random_states_0.pkl
+[2025-11-09 00:39:37,081][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-350
+[2025-11-09 00:45:36,442][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400
+[2025-11-09 00:45:36,524][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400/optimizer.bin
+[2025-11-09 00:45:36,524][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400/scheduler.bin
+[2025-11-09 00:45:36,524][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400/sampler.bin
+[2025-11-09 00:45:36,525][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400/sampler_1.bin
+[2025-11-09 00:45:36,525][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400/sampler_2.bin
+[2025-11-09 00:45:36,525][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400/random_states_0.pkl
+[2025-11-09 00:45:36,526][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-400
+[2025-11-09 00:51:55,707][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450
+[2025-11-09 00:51:55,786][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450/optimizer.bin
+[2025-11-09 00:51:55,786][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450/scheduler.bin
+[2025-11-09 00:51:55,786][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450/sampler.bin
+[2025-11-09 00:51:55,786][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450/sampler_1.bin
+[2025-11-09 00:51:55,786][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450/sampler_2.bin
+[2025-11-09 00:51:55,787][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450/random_states_0.pkl
+[2025-11-09 00:51:55,787][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-450
+[2025-11-09 00:58:14,962][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500
+[2025-11-09 00:58:15,044][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500/optimizer.bin
+[2025-11-09 00:58:15,045][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500/scheduler.bin
+[2025-11-09 00:58:15,045][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500/sampler.bin
+[2025-11-09 00:58:15,045][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500/sampler_1.bin
+[2025-11-09 00:58:15,045][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500/sampler_2.bin
+[2025-11-09 00:58:15,045][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500/random_states_0.pkl
+[2025-11-09 00:58:15,046][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-500
+[2025-11-09 01:04:30,916][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550
+[2025-11-09 01:04:31,024][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550/optimizer.bin
+[2025-11-09 01:04:31,024][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550/scheduler.bin
+[2025-11-09 01:04:31,024][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550/sampler.bin
+[2025-11-09 01:04:31,025][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550/sampler_1.bin
+[2025-11-09 01:04:31,025][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550/sampler_2.bin
+[2025-11-09 01:04:31,026][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550/random_states_0.pkl
+[2025-11-09 01:04:31,026][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-550
+[2025-11-09 01:10:39,494][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600
+[2025-11-09 01:10:39,575][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600/optimizer.bin
+[2025-11-09 01:10:39,575][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600/scheduler.bin
+[2025-11-09 01:10:39,575][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600/sampler.bin
+[2025-11-09 01:10:39,575][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600/sampler_1.bin
+[2025-11-09 01:10:39,575][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600/sampler_2.bin
+[2025-11-09 01:10:39,576][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600/random_states_0.pkl
+[2025-11-09 01:10:39,576][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-600
+[2025-11-09 01:16:53,470][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650
+[2025-11-09 01:16:53,572][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650/optimizer.bin
+[2025-11-09 01:16:53,572][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650/scheduler.bin
+[2025-11-09 01:16:53,572][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650/sampler.bin
+[2025-11-09 01:16:53,572][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650/sampler_1.bin
+[2025-11-09 01:16:53,573][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650/sampler_2.bin
+[2025-11-09 01:16:53,573][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650/random_states_0.pkl
+[2025-11-09 01:16:53,573][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-650
+[2025-11-09 01:23:01,653][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700
+[2025-11-09 01:23:01,755][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700/optimizer.bin
+[2025-11-09 01:23:01,756][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700/scheduler.bin
+[2025-11-09 01:23:01,756][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700/sampler.bin
+[2025-11-09 01:23:01,756][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700/sampler_1.bin
+[2025-11-09 01:23:01,756][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700/sampler_2.bin
+[2025-11-09 01:23:01,757][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700/random_states_0.pkl
+[2025-11-09 01:23:01,757][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-700
+[2025-11-09 01:29:01,025][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750
+[2025-11-09 01:29:01,105][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750/optimizer.bin
+[2025-11-09 01:29:01,105][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750/scheduler.bin
+[2025-11-09 01:29:01,105][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750/sampler.bin
+[2025-11-09 01:29:01,106][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750/sampler_1.bin
+[2025-11-09 01:29:01,106][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750/sampler_2.bin
+[2025-11-09 01:29:01,106][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750/random_states_0.pkl
+[2025-11-09 01:29:01,106][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-750
+[2025-11-09 01:35:01,887][accelerate.accelerator][INFO] - Saving current state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800
+[2025-11-09 01:35:01,964][accelerate.checkpointing][INFO] - Optimizer state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800/optimizer.bin
+[2025-11-09 01:35:01,965][accelerate.checkpointing][INFO] - Scheduler state saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800/scheduler.bin
+[2025-11-09 01:35:01,965][accelerate.checkpointing][INFO] - Sampler state for dataloader 0 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800/sampler.bin
+[2025-11-09 01:35:01,965][accelerate.checkpointing][INFO] - Sampler state for dataloader 1 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800/sampler_1.bin
+[2025-11-09 01:35:01,965][accelerate.checkpointing][INFO] - Sampler state for dataloader 2 saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800/sampler_2.bin
+[2025-11-09 01:35:01,966][accelerate.checkpointing][INFO] - Random states saved in /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800/random_states_0.pkl
+[2025-11-09 01:35:01,966][__main__][INFO] - Saved state to /data1/dif/nft_db_output/experiment_20251108_235453/0/checkpoint-800
